@@ -127,13 +127,17 @@ public class binarySortTree {
 
 
    第一种情况：删除的节点是叶子节点
-
+(1)需求先去找到要删除的结点targetNode
+(2)找到targetNode的父结点parent
+(3)确定targetNode是parent的左子结点还是右子结点
+   3.1如果targetNode是parent的左子结点:parent.left = null;
+   3.2如果targetNode是parent的右子结点:parent.right = null;
 
    第二种情况:删除只有一颗子树的节点
 (1)需求先去找到要删除的结点targetNode
 (2)找到targetNode的父结点parent
 (3)确定targetNode的子结点是左子结点还是右子结点
-(4) targetNode是parent的左子结点还是右子结点
+(4)确定targetNode是parent的左子结点还是右子结点
 (5)如果targetNode有左子结点
    5.1如果targetNode是parent的左子结点parent.left = targetNode.left;
    5.2如果targetNode是parent的右子结点parent.right = targetNode.left;
