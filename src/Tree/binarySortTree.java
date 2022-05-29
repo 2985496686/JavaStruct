@@ -163,7 +163,7 @@ public class binarySortTree {
         if(targetNode.left == null && targetNode.right == null){
             //要删除的节点就是根节点
             if(targetNodeParent == null){
-              root = targetNode;
+              root = null;
             }
             else{
                 //要删除节点是其父节点的左节点
@@ -231,55 +231,10 @@ public class binarySortTree {
     public static void main(String[] args) {
         binarySortTree tree = new binarySortTree();
         tree.add(10);
-        tree.add(3);
-        tree.add(7);
-        tree.add(12);
-        tree.add(5);
         tree.add(1);
-        tree.add(9);
-        tree.add(13);
-        tree.add(7);
-        tree.add(3);
-        tree.add(10);
-        tree.add(3);
-        tree.add(7);
-        tree.add(12);
-        tree.add(5);
-        tree.add(1);
-        tree.add(9);
-        tree.add(13);
-        tree.add(7);
-        tree.add(3);
-        tree.add(10);
-        tree.add(3);
-        tree.add(7);
-        tree.add(12);
-        tree.add(5);
-        tree.add(1);
-        tree.add(9);
-        tree.add(13);
-        tree.add(7);
-        tree.add(3);
-        tree.add(10);
-        tree.add(3);
-        tree.add(7);
-        tree.add(12);
-        tree.add(5);
-        tree.add(1);
-        tree.add(9);
-        tree.add(13);
-        tree.add(7);
-        tree.add(3);
-        tree.remove(3);
-        tree.remove(3);
-        tree.remove(5);
         tree.remove(1);
-        tree.remove(1);
-        tree.remove(13);
-        tree.remove(13);
-        tree.remove(13);
-        tree.remove(13);
-        tree.remove(13);
+        tree.remove(10);
+
         tree.inPrevOrder();
     }
 }
