@@ -1,5 +1,7 @@
 package Tree;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 public class binaryTree {
@@ -102,6 +104,24 @@ public class binaryTree {
             }
         }
     }
+
+    //层序遍历
+    public void levelOrder(){
+        Queue<treeNode> queue = new ArrayDeque<>();
+        if(root != null){
+            queue.offer(root);
+        }
+        while(queue.peek() != null){
+            treeNode cur = queue.poll();
+            System.out.print(cur.value + " ");
+            if(cur.left != null){
+                queue.offer(cur.left);
+            }
+            if(cur.right != null){
+                queue.offer(cur.right);
+            }
+        }
+    }
 }
 class test{
     public static void main(String[] args) {
@@ -115,11 +135,6 @@ class test{
         B.left = D;
         B.right = E;
         binaryTree tree = new binaryTree(A);
-        tree.prevOrder();
-        tree.inOrder();
-        tree.postOrder();
-        tree.inOrderByStack();
-        tree.prevOrderByStack();
-        tree.postOrderByStack();
+        tree.levelOrder();
     }
 }

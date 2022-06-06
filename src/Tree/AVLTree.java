@@ -26,6 +26,9 @@ public class AVLTree <E extends Comparable<E>>{
     }
     Node root;
     int size;
+    public int size(){
+        return size;
+    }
     public int getHeight(Node node) {
         if(node == null) return 0;
         return node.height;
@@ -105,11 +108,11 @@ public class AVLTree <E extends Comparable<E>>{
         //获取当前节点的平衡因子
         int balanceFactor = getBalanceFactor(node);
         //该子树不平衡且新插入节点(导致不平衡的节点)在左子树的左子树上，此时需要进行右旋
-        if (balanceFactor > 1 && getBalanceFactor(node.left) > 0) {
+        if (balanceFactor > 1 && getBalanceFactor(node.left) >= 0) {
             return rightRotate(node);
         }
         //该子树不平衡且新插入节点(导致不平衡的节点)在右子树子树的右子树上，此时需要进行左旋
-        else if (balanceFactor < -1 && getBalanceFactor(node.right) < 0) {
+        else if (balanceFactor < -1 && getBalanceFactor(node.right) <= 0) {
             return leftRotate(node);
         }
         //该子树不平衡且新插入节点(导致不平衡的节点)在左子树的右子树上，此时需要先对左子树左旋，在整个树右旋
