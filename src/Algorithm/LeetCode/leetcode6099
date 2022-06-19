@@ -1,0 +1,25 @@
+class Solution {
+    public int longestSubsequence(String s, int k) {
+        int l = s.length();
+        int rnt = 0,tmp = 0,flag = 0;
+        long sum = 0;
+        char cur;
+        for(int i = l - 1; i >=0; i--){
+            cur = s.charAt(i);
+            if(cur == '0'){
+                rnt++;
+                tmp++;
+            }
+            else if(flag == 0){
+                if(sum + (1L<<tmp) > k)
+                    flag = 1;
+                else{
+                    sum += (1L<<tmp);
+                    rnt++;
+                    tmp++;
+                }
+            }
+        }
+        return rnt;
+    }
+}
